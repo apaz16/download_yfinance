@@ -28,7 +28,11 @@ Text_Period = st.text_input("Periodo deseado", "1y")
 Text_Granularity = st.text_input("Granularidad deseada:", "1d")
 DH = Ticker.history(Text_Period, interval = Text_Granularity)
 
-st.write(f"Tabla de Precios de {Ticker_1}")
+Info = Ticker.get_info()
+Info = pd.DataFrame([Info])
+Name = Info["longname"]
+
+st.write(f"Tabla de Precios de {Name}")
 st.dataframe(DH, use_container_width = True, height = 300)
 
 output = BytesIO()
