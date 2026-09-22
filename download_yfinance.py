@@ -29,7 +29,6 @@ Text_Granularity = st.text_input("Granularidad deseada:", "1d")
 DH = Ticker.history(Text_Period, interval = Text_Granularity)
 
 Info = Ticker.get_info()
-Info = pd.DataFrame([Info])
 Name = Info["longName"]
 
 st.write(f"Tabla de Precios de {Name}")
