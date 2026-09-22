@@ -30,7 +30,7 @@ DH = Ticker.history(Text_Period, interval = Text_Granularity)
 
 Info = Ticker.get_info()
 Info = pd.DataFrame([Info])
-Name = Info["longname"]
+Name = Info["longName"]
 
 st.write(f"Tabla de Precios de {Name}")
 st.dataframe(DH, use_container_width = True, height = 300)
